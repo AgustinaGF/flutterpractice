@@ -34,17 +34,18 @@ class MenuPage extends StatelessWidget {
         ListTile(
           onTap: () {
             final faker = Faker();
-            // final route = MaterialPageRoute(
-            //   builder: (_) => LoginPage(
-            //     email: faker.internet.email(),
-            //   ),
             final route = MaterialPageRoute(
-                builder: (_) => const LoginPage(
-                    // email: faker.internet.email(),
-                    ),
-                settings: RouteSettings(
-                  arguments: faker.internet.email(),
-                ));
+              builder: (_) => LoginPage(
+                email: faker.internet.email(),
+              ),
+            );
+            // final route = MaterialPageRoute(
+            //     builder: (_) => const LoginPage(
+            //         // email: faker.internet.email(),
+            //         ),
+            //     settings: RouteSettings(
+            //       arguments: faker.internet.email(),
+            //     ));
             Navigator.push(context, route);
           },
           title: const Text('Go to login'),
