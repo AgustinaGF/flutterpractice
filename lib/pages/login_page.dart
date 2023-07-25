@@ -21,16 +21,27 @@ class LoginPage extends StatelessWidget {
           //   },
           // ),
           ),
-      body: Center(
-        child: MaterialButton(
-            onPressed: () {
-              final route = MaterialPageRoute(
-                builder: (_) => const ProfilePage(),
-                settings: const RouteSettings(name: '/profile'),
-              );
-              Navigator.push(context, route);
-            },
-            child: Text('Login Page $email')),
+      body: SafeArea(
+        child: Column(
+          children: [
+            MaterialButton(
+                onPressed: () {
+                  final route = MaterialPageRoute(
+                    builder: (_) => const ProfilePage(),
+                  );
+                  Navigator.push(context, route);
+                },
+                child: Text('Login Page $email')),
+            Expanded(
+                child: ListView.builder(
+              itemBuilder: (_, index) => Container(
+                height: 70,
+                color: Colors.primaries[index],
+              ),
+              itemCount: Colors.primaries.length,
+            ))
+          ],
+        ),
       ),
     );
   }

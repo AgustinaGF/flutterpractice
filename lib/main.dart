@@ -28,13 +28,12 @@ class MenuPage extends StatelessWidget {
 
   void _onTap(BuildContext context) {
     final faker = Faker();
+    final email = faker.internet.email();
     final route = MaterialPageRoute(
-        builder: (_) => LoginPage(
-              email: faker.internet.email(),
-            ),
-        settings: const RouteSettings(
-          name: '/login',
-        ));
+      builder: (_) => LoginPage(
+        email: email,
+      ),
+    );
     Navigator.push(context, route);
     // Navigator.pushReplacement(context, route);
   }
