@@ -26,6 +26,7 @@ class LoginPage extends StatelessWidget {
             onPressed: () {
               final route = MaterialPageRoute(
                 builder: (_) => const ProfilePage(),
+                settings: const RouteSettings(name: '/profile'),
               );
               Navigator.push(context, route);
             },

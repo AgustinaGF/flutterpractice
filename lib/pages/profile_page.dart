@@ -12,8 +12,17 @@ class ProfilePage extends StatelessWidget {
       body: Center(
         child: MaterialButton(
           onPressed: () {
-            Navigator.pop(context);
-            Navigator.pop(context);
+            Navigator.popUntil(
+              context,
+              (route) {
+                final name = route.settings.name;
+                //esto hace que no se elimine esta ruta
+                if (name == '/') {
+                  return true;
+                }
+                return false;
+              },
+            );
           },
           child: const Text('LOG OUT'),
         ),
