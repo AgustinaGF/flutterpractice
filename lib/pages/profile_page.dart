@@ -17,10 +17,7 @@ class ProfilePage extends StatelessWidget {
               (route) {
                 final name = route.settings.name;
                 //esto hace que no se elimine esta ruta
-                if (name == '/') {
-                  return true;
-                }
-                return false;
+                return name == '/';
               },
             );
           },
