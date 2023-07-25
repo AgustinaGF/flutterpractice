@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key, required this.email});
+  const LoginPage({super.key});
 
-  final String email;
+  // final String email;
   @override
   Widget build(BuildContext context) {
+    final modalRoute = ModalRoute.of(context)!;
+    final arguments = modalRoute.settings.arguments as String;
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -18,7 +21,7 @@ class LoginPage extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Text('Login Page $email'),
+        child: Text('Login Page $arguments'),
       ),
     );
   }

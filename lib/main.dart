@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practiceflutter/pages/login_page.dart';
+import 'package:faker/faker.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,11 +33,18 @@ class MenuPage extends StatelessWidget {
       body: ListView(children: [
         ListTile(
           onTap: () {
+            final faker = Faker();
+            // final route = MaterialPageRoute(
+            //   builder: (_) => LoginPage(
+            //     email: faker.internet.email(),
+            //   ),
             final route = MaterialPageRoute(
-              builder: (_) => const LoginPage(
-                email: 'test@test.com',
-              ),
-            );
+                builder: (_) => const LoginPage(
+                    // email: faker.internet.email(),
+                    ),
+                settings: RouteSettings(
+                  arguments: faker.internet.email(),
+                ));
             Navigator.push(context, route);
           },
           title: const Text('Go to login'),
