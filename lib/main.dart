@@ -26,28 +26,27 @@ class MyApp extends StatelessWidget {
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
 
+  void _onTap(BuildContext context) {
+    final faker = Faker();
+    final route = MaterialPageRoute(
+      builder: (_) => LoginPage(
+        email: faker.internet.email(),
+      ),
+      //     settings: RouteSettings(
+      //       arguments: faker.internet.email(),
+      //     ));
+    );
+    Navigator.push(context, route);
+    // Navigator.pushReplacement(context, route);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: ListView(children: [
         ListTile(
-          onTap: () {
-            final faker = Faker();
-            final route = MaterialPageRoute(
-              builder: (_) => LoginPage(
-                email: faker.internet.email(),
-              ),
-            );
-            // final route = MaterialPageRoute(
-            //     builder: (_) => const LoginPage(
-            //         // email: faker.internet.email(),
-            //         ),
-            //     settings: RouteSettings(
-            //       arguments: faker.internet.email(),
-            //     ));
-            Navigator.push(context, route);
-          },
+          onTap: () => _onTap(context),
           title: const Text('Go to login'),
           trailing: const Icon(Icons.arrow_right_alt_outlined),
         )
