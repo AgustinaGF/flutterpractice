@@ -28,19 +28,14 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.maybePop(context);
-          },
-        ),
-      ),
+      appBar: AppBar(),
       body: ListView(children: [
         ListTile(
           onTap: () {
             final route = MaterialPageRoute(
-              builder: (_) => const LoginPage(),
+              builder: (_) => const LoginPage(
+                email: 'test@test.com',
+              ),
             );
             Navigator.push(context, route);
           },
