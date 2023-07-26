@@ -22,9 +22,11 @@ class ProfilePage extends StatelessWidget {
             //     return name == Routes.initialRoute;
             //   },
             // );
-            Navigator.pushNamed(
+            //navega a una ruta y elimina las anteriores
+            Navigator.pushNamedAndRemoveUntil(
               context,
               Routes.initialRoute,
+              (route) => false,
             );
           },
           child: const Text('LOG OUT'),
