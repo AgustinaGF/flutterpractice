@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../routes.dart';
+
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
@@ -12,13 +14,17 @@ class ProfilePage extends StatelessWidget {
       body: Center(
         child: MaterialButton(
           onPressed: () {
-            Navigator.popUntil(
+            // Navigator.popUntil(
+            //   context,
+            //   (route) {
+            //     final name = route.settings.name;
+            //     //esto hace que no se elimine esta ruta
+            //     return name == Routes.initialRoute;
+            //   },
+            // );
+            Navigator.pushNamed(
               context,
-              (route) {
-                final name = route.settings.name;
-                //esto hace que no se elimine esta ruta
-                return name == '/';
-              },
+              Routes.initialRoute,
             );
           },
           child: const Text('LOG OUT'),

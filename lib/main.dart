@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practiceflutter/app_routes.dart';
+import 'package:practiceflutter/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      initialRoute: Routes.initialRoute,
       routes: appRoutes,
     );
   }
