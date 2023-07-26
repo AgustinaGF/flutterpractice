@@ -7,16 +7,19 @@ class ColorPicker extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
-        itemBuilder: (_, index) => GestureDetector(
-          onTap: () {
-            //el segundo parametro es el que va a retornar el color seleccionado
-            Navigator.pop(context, Colors.primaries[index]);
-          },
-          child: Container(
-            height: 70,
-            color: Colors.primaries[index],
-          ),
-        ),
+        itemBuilder: (_, index) {
+          final color = Colors.primaries[index];
+          return GestureDetector(
+            onTap: () {
+              //el segundo parametro es el que va a retornar el color seleccionado
+              Navigator.pop(context, color);
+            },
+            child: Container(
+              height: 70,
+              color: color,
+            ),
+          );
+        },
         itemCount: Colors.primaries.length,
       ),
     );

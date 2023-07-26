@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practiceflutter/pages/color_picker.dart';
 import 'package:practiceflutter/pages/counter_page.dart';
 import 'package:practiceflutter/pages/login_page.dart';
 import 'package:practiceflutter/pages/menu_page.dart';
@@ -20,6 +21,7 @@ Map<String, Widget Function(BuildContext)> get appRoutes {
       return LoginPage(
         email: email,
       );
-    }
+    },
+    Routes.colorPicker: (_) => const ColorPicker(),
   };
 }
