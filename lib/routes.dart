@@ -9,4 +9,5 @@ class Routes {
   static const login = '/login';
   static const splash = '/splash';
   static const colorPicker = '/color_picker';
+  static const dialogs = '/dialogs';
 }
