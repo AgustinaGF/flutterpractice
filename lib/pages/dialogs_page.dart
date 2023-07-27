@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practiceflutter/dialogs/confirm_dialog.dart';
 
 class DialogsPages extends StatelessWidget {
   const DialogsPages({super.key});
@@ -14,6 +15,15 @@ class DialogsPages extends StatelessWidget {
               await showDialog(
                 context: context,
                 builder: (context) => DialogContent(),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('show confirm dialog'),
+            onTap: () async {
+              final isOk = await showConfirmDialog(
+                context,
+                title: 'Are you sure?',
               );
             },
           )
