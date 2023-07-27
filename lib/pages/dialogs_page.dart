@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practiceflutter/dialogs/confirm_dialog.dart';
+import 'package:practiceflutter/dialogs/cupertino_dialog.dart';
 
 class DialogsPages extends StatelessWidget {
   const DialogsPages({super.key});
@@ -25,6 +26,13 @@ class DialogsPages extends StatelessWidget {
                 context,
                 title: 'Are you sure?',
               );
+            },
+          ),
+          ListTile(
+            title: const Text('show cupertinoDialog dialog'),
+            onTap: () async {
+              showDialogWithCupertinoStyle(context,
+                  title: 'Hi', content: 'How are you');
             },
           )
         ],
