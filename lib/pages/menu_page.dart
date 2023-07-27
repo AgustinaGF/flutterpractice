@@ -30,6 +30,10 @@ class _MenuPageState extends State<MenuPage> {
       name: Routes.colorPicker,
       label: 'Pick color',
     ),
+    PageData(
+      name: Routes.dialogs,
+      label: 'Go to dialogs',
+    ),
   ];
 
   @override
