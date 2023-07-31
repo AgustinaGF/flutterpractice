@@ -5,10 +5,25 @@ class CounterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('counter'),
-      ),
-    );
+    return WillPopScope(
+        child: Scaffold(
+          appBar: AppBar(
+            leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                Icons.arrow_back_ios,
+              ),
+            ),
+          ),
+          body: const Center(
+            child: Text('counter'),
+          ),
+        ),
+        //sirve para ver cuando se apreta el boton de retroceso
+        onWillPop: () {
+          return Future.value(false);
+        });
   }
 }
