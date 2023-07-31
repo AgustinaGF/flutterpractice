@@ -12,14 +12,58 @@ class _CustomDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTextStyle(
-      style: TextStyle(),
-      child: Container(
+    return Center(
+      child: Material(
+        borderRadius: BorderRadius.circular(15),
+        child: SizedBox(
+          width: 360,
           child: Column(
-        children: [
-          Text('Congratulations'),
-        ],
-      )),
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Align(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.close,
+                    size: 30,
+                  ),
+                ),
+              ),
+              const Text(
+                'Congratulations!',
+                style: TextStyle(
+                  color: Colors.green,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              const Icon(
+                Icons.emoji_emotions_outlined,
+                color: Colors.green,
+                size: 100,
+              ),
+              const Padding(
+                padding: EdgeInsets.all(25),
+                child: Text(
+                  'Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio.',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
