@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practiceflutter/dialogs/bottom_sheet_dialog.dart';
 import 'package:practiceflutter/dialogs/confirm_dialog.dart';
 import 'package:practiceflutter/dialogs/cupertino_dialog.dart';
 
@@ -33,6 +34,12 @@ class DialogsPages extends StatelessWidget {
             onTap: () async {
               showDialogWithCupertinoStyle(context,
                   title: 'Hi', content: 'How are you');
+            },
+          ),
+          ListTile(
+            title: const Text('show bottom sheet dialog'),
+            onTap: () async {
+              ShowBottomSheetDialog(context);
             },
           )
         ],
